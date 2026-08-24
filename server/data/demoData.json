@@ -103,6 +103,19 @@
       "demandVelocity": 15,
       "createdAt": "2026-08-24T09:14:21.765Z",
       "updatedAt": "2026-08-24T09:14:21.765Z"
+    },
+    {
+      "_id": "local_12",
+      "status": "ACTIVE",
+      "sku": "SKU-TEST-001",
+      "name": "Test Product",
+      "category": "ELECTRONICS",
+      "currentPrice": 999,
+      "stockLevel": 50,
+      "reorderThreshold": 20,
+      "demandVelocity": 5,
+      "createdAt": "2026-08-24T09:20:18.075Z",
+      "updatedAt": "2026-08-24T09:20:18.075Z"
     }
   ],
   "pricingSuggestions": [
