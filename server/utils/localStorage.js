@@ -32,7 +32,7 @@ class LocalStorage {
           ...this.data.reorderSuggestions.map(p => p._id),
           ...this.data.inventorySnapshots.map(p => p._id)
         ].filter(id => id.startsWith('local_'));
-        
+
         if (allIds.length > 0) {
           const maxId = Math.max(...allIds.map(id => parseInt(id.split('_')[1])));
           this.nextId = maxId + 1;
@@ -49,12 +49,12 @@ class LocalStorage {
       const fs = require('fs');
       const path = require('path');
       const dataDir = path.join(__dirname, '../data');
-      
+
       // Create data directory if it doesn't exist
       if (!fs.existsSync(dataDir)) {
         fs.mkdirSync(dataDir, { recursive: true });
       }
-      
+
       const dataPath = path.join(dataDir, 'demoData.json');
       fs.writeFileSync(dataPath, JSON.stringify(this.data, null, 2));
     } catch (error) {
@@ -81,6 +81,7 @@ class LocalStorage {
   createProduct(productData) {
     const product = {
       _id: this.generateId(),
+      status: 'ACTIVE',
       ...productData,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -93,7 +94,7 @@ class LocalStorage {
   updateProduct(id, updates) {
     const productIndex = this.data.products.findIndex(p => p._id === id);
     if (productIndex === -1) return null;
-    
+
     this.data.products[productIndex] = {
       ...this.data.products[productIndex],
       ...updates,
@@ -106,7 +107,7 @@ class LocalStorage {
   deleteProduct(id) {
     const productIndex = this.data.products.findIndex(p => p._id === id);
     if (productIndex === -1) return false;
-    
+
     this.data.products.splice(productIndex, 1);
     this.saveToFile();
     return true;
@@ -142,6 +143,7 @@ class LocalStorage {
   createPricingSuggestion(suggestionData) {
     const suggestion = {
       _id: this.generateId(),
+      status: 'PENDING',
       ...suggestionData,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -154,6 +156,7 @@ class LocalStorage {
   createReorderSuggestion(suggestionData) {
     const suggestion = {
       _id: this.generateId(),
+      status: 'PENDING',
       ...suggestionData,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -166,7 +169,7 @@ class LocalStorage {
   updatePricingSuggestion(id, updates) {
     const suggestionIndex = this.data.pricingSuggestions.findIndex(s => s._id === id);
     if (suggestionIndex === -1) return null;
-    
+
     this.data.pricingSuggestions[suggestionIndex] = {
       ...this.data.pricingSuggestions[suggestionIndex],
       ...updates,
@@ -179,7 +182,7 @@ class LocalStorage {
   updateReorderSuggestion(id, updates) {
     const suggestionIndex = this.data.reorderSuggestions.findIndex(s => s._id === id);
     if (suggestionIndex === -1) return null;
-    
+
     this.data.reorderSuggestions[suggestionIndex] = {
       ...this.data.reorderSuggestions[suggestionIndex],
       ...updates,

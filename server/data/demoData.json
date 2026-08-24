@@ -2,6 +2,7 @@
   "products": [
     {
       "_id": "local_1",
+      "status": "ACTIVE",
       "sku": "SKU-ELEC-001",
       "name": "Wireless Earbuds Pro",
       "category": "ELECTRONICS",
@@ -9,12 +10,12 @@
       "stockLevel": 45,
       "reorderThreshold": 20,
       "demandVelocity": 3,
-      "status": "ACTIVE",
-      "createdAt": "2026-08-24T08:19:46.928Z",
-      "updatedAt": "2026-08-24T08:19:46.929Z"
+      "createdAt": "2026-08-24T09:14:21.756Z",
+      "updatedAt": "2026-08-24T09:14:21.756Z"
     },
     {
       "_id": "local_2",
+      "status": "ACTIVE",
       "sku": "SKU-ELEC-002",
       "name": "USB-C Hub 7-Port",
       "category": "ELECTRONICS",
@@ -22,12 +23,12 @@
       "stockLevel": 120,
       "reorderThreshold": 30,
       "demandVelocity": 1,
-      "status": "ACTIVE",
-      "createdAt": "2026-08-24T08:19:46.934Z",
-      "updatedAt": "2026-08-24T08:19:46.934Z"
+      "createdAt": "2026-08-24T09:14:21.758Z",
+      "updatedAt": "2026-08-24T09:14:21.758Z"
     },
     {
       "_id": "local_3",
+      "status": "PRICE_REVIEW_PENDING",
       "sku": "SKU-APP-001",
       "name": "Organic Cotton T-Shirt",
       "category": "APPAREL",
@@ -35,12 +36,12 @@
       "stockLevel": 8,
       "reorderThreshold": 15,
       "demandVelocity": 12,
-      "status": "PRICE_REVIEW_PENDING",
-      "createdAt": "2026-08-24T08:19:46.936Z",
-      "updatedAt": "2026-08-24T08:19:46.936Z"
+      "createdAt": "2026-08-24T09:14:21.759Z",
+      "updatedAt": "2026-08-24T09:14:21.759Z"
     },
     {
       "_id": "local_4",
+      "status": "ACTIVE",
       "sku": "SKU-APP-002",
       "name": "Running Shorts - Navy",
       "category": "APPAREL",
@@ -48,25 +49,25 @@
       "stockLevel": 55,
       "reorderThreshold": 20,
       "demandVelocity": 2,
-      "status": "ACTIVE",
-      "createdAt": "2026-08-24T08:19:46.939Z",
-      "updatedAt": "2026-08-24T08:19:46.939Z"
+      "createdAt": "2026-08-24T09:14:21.760Z",
+      "updatedAt": "2026-08-24T09:14:21.760Z"
     },
     {
       "_id": "local_5",
+      "status": "ACTIVE",
       "sku": "SKU-HOME-001",
       "name": "Ceramic Pour-Over Set",
       "category": "HOME",
       "currentPrice": 49.99,
-      "stockLevel": 22,
+      "stockLevel": 9,
       "reorderThreshold": 10,
       "demandVelocity": 4,
-      "status": "ACTIVE",
-      "createdAt": "2026-08-24T08:19:46.947Z",
-      "updatedAt": "2026-08-24T08:19:46.947Z"
+      "createdAt": "2026-08-24T09:14:21.761Z",
+      "updatedAt": "2026-08-24T09:14:52.804Z"
     },
     {
       "_id": "local_6",
+      "status": "OUT_OF_STOCK",
       "sku": "SKU-HOME-002",
       "name": "LED Desk Lamp - Dimmable",
       "category": "HOME",
@@ -74,12 +75,12 @@
       "stockLevel": 0,
       "reorderThreshold": 15,
       "demandVelocity": 0,
-      "status": "OUT_OF_STOCK",
-      "createdAt": "2026-08-24T08:19:46.952Z",
-      "updatedAt": "2026-08-24T08:19:46.952Z"
+      "createdAt": "2026-08-24T09:14:21.762Z",
+      "updatedAt": "2026-08-24T09:14:21.762Z"
     },
     {
       "_id": "local_7",
+      "status": "ACTIVE",
       "sku": "SKU-ELEC-003",
       "name": "Portable Charger 20K",
       "category": "ELECTRONICS",
@@ -87,12 +88,12 @@
       "stockLevel": 18,
       "reorderThreshold": 25,
       "demandVelocity": 8,
-      "status": "ACTIVE",
-      "createdAt": "2026-08-24T08:19:46.962Z",
-      "updatedAt": "2026-08-24T08:19:46.962Z"
+      "createdAt": "2026-08-24T09:14:21.764Z",
+      "updatedAt": "2026-08-24T09:14:21.764Z"
     },
     {
       "_id": "local_8",
+      "status": "ACTIVE",
       "sku": "SKU-APP-003",
       "name": "Hoodie - Heather Grey",
       "category": "APPAREL",
@@ -100,12 +101,45 @@
       "stockLevel": 11,
       "reorderThreshold": 12,
       "demandVelocity": 15,
-      "status": "ACTIVE",
-      "createdAt": "2026-08-24T08:19:46.964Z",
-      "updatedAt": "2026-08-24T08:19:46.964Z"
+      "createdAt": "2026-08-24T09:14:21.765Z",
+      "updatedAt": "2026-08-24T09:14:21.765Z"
     }
   ],
-  "pricingSuggestions": [],
-  "reorderSuggestions": [],
-  "inventorySnapshots": []
+  "pricingSuggestions": [
+    {
+      "_id": "local_10",
+      "status": "PENDING",
+      "productId": "local_5",
+      "recommendedPrice": 49.99,
+      "changeDirection": "NO_CHANGE",
+      "confidence": 0.6,
+      "reasoning": "Current pricing appears optimal based on stock levels (9) and demand velocity (4).",
+      "triggerReason": "INVENTORY_LOW",
+      "createdAt": "2026-08-24T09:14:52.869Z",
+      "updatedAt": "2026-08-24T09:14:52.869Z"
+    }
+  ],
+  "reorderSuggestions": [
+    {
+      "_id": "local_11",
+      "status": "PENDING",
+      "productId": "local_5",
+      "recommendedQuantity": 11,
+      "confidence": 0.85,
+      "reasoning": "Low inventory alert. Current stock (9) below reorder threshold (10). Recommended quantity accounts for demand velocity (4).",
+      "triggerReason": "INVENTORY_LOW",
+      "createdAt": "2026-08-24T09:14:52.886Z",
+      "updatedAt": "2026-08-24T09:14:52.886Z"
+    }
+  ],
+  "inventorySnapshots": [
+    {
+      "_id": "local_9",
+      "productId": "local_5",
+      "stockLevel": 9,
+      "demandVelocity": 4,
+      "categoryAverageVelocity": 5,
+      "createdAt": "2026-08-24T09:14:52.806Z"
+    }
+  ]
 }
