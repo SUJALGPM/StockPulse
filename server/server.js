@@ -1,26 +1,32 @@
 const express = require('express');
+const cors = require('cors');
+require('dotenv').config();
+const connectDB = require('./config/db');
+const productRoutes = require('./routes/productRoutes');
+const suggestionRoutes = require('./routes/suggestionRoutes');
+const dashboardRoutes = require('./routes/dashboardRoutes');
+
 const app = express();
-const PORT = 2000;
+const PORT = process.env.PORT || 2000;
+
+// Connect to MongoDB
+connectDB();
 
 // Middleware
+app.use(cors());
 app.use(express.json());
 
-// Health check endpoint
-app.get('/api/health', (req, res) => {
+// Routes
+app.use('/api/health', (req, res) => {
   res.status(200).json({
     success: true,
-    message: 'Server is running successfully!',
-    timestamp: new Date().toISOString()
+    message: 'StockPulse API is running'
   });
 });
 
-// Root endpoint
-app.get('/', (req, res) => {
-  res.status(200).json({
-    success: true,
-    message: 'Welcome to the MERN stack server!'
-  });
-});
+app.use('/api/products', productRoutes);
+app.use('/api/suggestions', suggestionRoutes);
+app.use('/api/dashboard', dashboardRoutes);
 
 // Start server
 app.listen(PORT, () => {
