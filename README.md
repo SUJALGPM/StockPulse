@@ -1,5 +1,7 @@
 # StockPulse — AI-Powered Inventory & Dynamic Pricing System
 
+> **Note:** No `.env` setup needed to run this — if MongoDB/LLM aren't configured, the app automatically falls back to local storage and a rule-based recommendation engine. Just run `npm install && npm run dev` in both the `client` and `server` folders.
+
 StockPulse is an intelligent inventory management platform that helps businesses track stock, detect low-inventory situations automatically, and get AI-driven pricing and reorder recommendations — with a manager able to accept or reject every suggestion before it takes effect.
 
 Built as part of an AI-assisted development exercise, using Cline (AI coding agent) inside VS Code to build, debug, and iterate on the full stack.
